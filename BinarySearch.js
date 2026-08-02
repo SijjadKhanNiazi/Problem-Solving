@@ -1,18 +1,16 @@
-const Search = (n, target) => {
-  let num = n.sort((a, b) => a - b);
-  console.log(num);
+const BSort = (arr, target) => {
+  const sorted = arr.sort((a, b) => a - b);
   let left = 0;
-  let right = num.length - 1;
+  let right = arr.length - 1;
   while (left <= right) {
-    let mid = Math.floor((right + left) / 2);
-    if (num[mid] === target) return mid;
-    if (target > num[mid]) {
+    let mid = Math.floor((left + right) / 2);
+    if (sorted[mid] === target) return [sorted, mid];
+    if (sorted[mid] < target) {
       left = mid + 1;
     } else {
       right = mid - 1;
     }
   }
-  return -1;
 };
 
-console.log(Search([1, 2, 3, 4, 5, 6, 54, 3, 2, 1], 5));
+console.log(BSort([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 7));
