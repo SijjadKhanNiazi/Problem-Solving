@@ -15,4 +15,4 @@ const paramid = (rows) => {
     console.log(lineContent);
   }
 };
-paramid(9);
+paramid(5);
